@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="row">
+   
+      <div class="col-6">
+          <mat-card>
+              <div class="row">
+            <div class="col-6 " >
+            <form class="example-form">
+              <mat-form-field >
+                <input matInput placeholder="Name" name="name" [(ngModel)]="customer.name">
+              </mat-form-field>
+              <mat-form-field >
+                  <input matInput placeholder="Email" name="email"  [(ngModel)]="customer.email">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                
+                    <input type="tel" matInput placeholder="Telephone"name="mobilenumber" [(ngModel)]="customer.mobilenumber">
+                   
+                  </mat-form-field>
+              </form>
+            </div>
+            
+           <div class="col-6 ">
+              <mat-radio-group aria-label="Select an option" name="gender" [(ngModel)]="customer.gender">
+                  <mat-radio-button [value]="male" >Male</mat-radio-button>
+                  <mat-radio-button [value]="female">Female</mat-radio-button>
+                </mat-radio-group>
+                <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Address" name="address" [(ngModel)]="customer.address"></textarea>
+                  </mat-form-field><br>
+                <button mat-raised-button mat-raised-button color="primary"(click)="saveCustomer()">Submit</button>
+              </div>
+            </div>
+          </mat-card>
+
+      </div>
+      <div class="col-6">
+          <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Firstname</th>
+                  <th>Email</th>
+                  <th>Gender</th>
+                  <th>Address</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let article of data">
+                  <td>{{article.name}}</td>
+                  <td>{{article.email}}</td>
+                  <td>{{article.gender}}</td>
+                  <td>{{article.address}}</td>
+                  <td colspan="2"><a  (click)="getProductedit(article)" class="btn-sm btn-primary" >edit</a>
+                    <a  class="btn-sm btn-danger" (click)="deleteProduct(article._id)" >delete
+                  </a></td>
+                </tr>
+              
+              </tbody>
+            </table>
+
+
+        <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+          </ng-container>
+          <ng-container matColumnDef="gender">
+            <th mat-header-cell *matHeaderCellDef> Gender </th>
+            <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+          </ng-container>
+          <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef> Address </th>
+            <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table> -->
+        
+      
+      </div>
+    </div>
+
+</div>

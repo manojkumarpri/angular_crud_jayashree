@@ -1,0 +1,66 @@
+
+
+<div class="col-md-6">
+  <div class="block">
+    <form [formGroup]="studeditForm" (ngSubmit)="onSubmit()" class="form-container centered">
+     
+      <div class="form-group">
+        <label>Register Number</label>
+        <input type="text" class="form-control" [value]="this.data.studnumberid" required [(ngModel)]="this.data.studnumberid"  
+        name="studnumberid" formControlName="studnumberid" [ngClass]="{ 'is-invalid': submitted && f.studnumberid.errors }"/>
+        <div *ngIf="submitted && f.studnumberid.errors" class="alertcolor">
+          <div *ngIf="f.studnumberid.errors.required && !f.studnumberid.touched">Name is required</div>
+          <!-- <div *ngIf="f.username.errors?.minlength">minimum digits is 9</div>
+          <div *ngIf="f['username'].errors?.maxlength">maximum digits is upto 9</div>  -->
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label>Student Name</label>
+        <input type="text" class="form-control" [value]="this.data.studentname" [(ngModel)]="this.data.studentname"  name="studentname" formControlName="studentname"/>
+         
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="text" [value]="this.data.password" [(ngModel)]="this.data.password"  name="password" formControlName="password"
+         class="form-control"/>
+      </div>
+  
+      <div class="form-group">
+        <label>Mobile Number</label>
+        <input type="text" [value]="this.data.mobilenumber" [(ngModel)]="this.data.mobilenumber" name="mobilenumber" formControlName="mobilenumber"
+         class="form-control"/>
+      </div>
+      
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" [value]="this.data.email" [(ngModel)]="this.data.email" name="email" formControlName="email"
+         class="form-control"/>
+      </div>
+      <div class="form-group">
+        <label>Gender &nbsp;&nbsp;</label> 
+        <select (change)="selectChangeHandler($event)" class="form-control" [(ngModel)]="this.data.gender" name="gender"  formControlName="gender">
+          <option [value]="this.data.gender" selected>{{this.data.gender}}</option>
+          <option [value]="Male">Male</option>
+          <option [value]="Female">Female</option>
+       </select>
+      </div>
+      <!-- <div class="form-group">
+        <label>Male</label>
+        <input type="radio" [value]="this.data.gender"  [(ngModel)]="this.data.gender" name="gender"  formControlName="gender"/>
+         <label>FeMale</label>
+         <input type="radio" [value]="this.data.gender" [(ngModel)]="this.data.gender" name="gender"  formControlName="gender"/>
+      </div> -->
+      <div class="form-group">
+        <label>Adress</label>
+        <input type="text"  [value]="this.data.address" [(ngModel)]="this.data.address" name="address" formControlName="address" class="form-control"/>
+      </div>
+      <div class="form-group text-center">
+        <button class="btn btn-primary">submit</button><br>
+      </div>
+    
+    </form>
+    </div>
+  
+    
+  </div>

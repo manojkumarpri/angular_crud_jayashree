@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+   
+      <div class="col-6">
+          <mat-card>
+              <div class="row">
+            <div class="col-6 " >
+            <form class="example-form">
+              <mat-form-field >
+                <input matInput placeholder="Name" name="name" [value]="this.listData.name" [(ngModel)]="this.listData.name">
+              </mat-form-field>
+              <mat-form-field >
+                  <input matInput placeholder="Email" name="email" [value]="this.listData.email"  [(ngModel)]="this.listData.email">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                
+                    <input type="tel" matInput placeholder="Telephone" [value]="this.listData.mobilenumber" name="mobilenumber" [(ngModel)]="this.listData.mobilenumber">
+                   
+                  </mat-form-field>
+              </form>
+            </div>
+            
+           <div class="col-6 ">
+            <mat-form-field class="example-full-width">
+                
+              <input type="tel" matInput placeholder="Gender" [value]="this.listData.gender" name="gender" [(ngModel)]="this.listData.gender">
+             
+            </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Address" name="address"  [value]="this.listData.address" [(ngModel)]="this.listData.address"></textarea>
+                  </mat-form-field><br>
+                <button mat-raised-button mat-raised-button color="primary"(click)="saveCustomer()">Submit</button>
+              </div>
+            </div>
+          </mat-card>
+
+      </div>

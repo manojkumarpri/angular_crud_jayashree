@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+   
+      <div class="col-6">
+          <mat-card>
+              <div class="row">
+            <div class="col-6 " >
+            <form class="example-form">
+              <mat-form-field >
+                <input matInput placeholder="Name" name="name" [(ngModel)]="vendor.name">
+              </mat-form-field>
+              <mat-form-field >
+                  <input matInput placeholder="Email" name="email"  [(ngModel)]="vendor.email">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                
+                    <input type="tel" matInput placeholder="Telephone"name="mobilenumber" [(ngModel)]="vendor.mobilenumber">
+                   
+                  </mat-form-field>
+              </form>
+            </div>
+            
+           <div class="col-6 ">
+              <mat-radio-group aria-label="Select an option" name="gender" [(ngModel)]="vendor.gender">
+                  <mat-radio-button value="male">Male</mat-radio-button>
+                  <mat-radio-button value="female">Female</mat-radio-button>
+                </mat-radio-group>
+                <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Address" name="address" [(ngModel)]="vendor.address"></textarea>
+                  </mat-form-field><br>
+                <button mat-raised-button mat-raised-button color="primary"(click)="saveVendor()">Submit</button>
+              </div>
+            </div>
+          </mat-card>
+
+      </div>
